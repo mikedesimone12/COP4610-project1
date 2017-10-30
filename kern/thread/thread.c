@@ -814,6 +814,17 @@ thread_yield(void)
 	thread_switch(S_READY, NULL, NULL);
 }
 
+// added thread_join
+void
+thread_join(void)
+{
+	int i;
+	for(i = 0; i < curthread->t_num_children - 1; i++)
+		P(curthread->t_csem);
+	curthread->t_num_children = 0;
+
+}
+
 ////////////////////////////////////////////////////////////
 
 /*

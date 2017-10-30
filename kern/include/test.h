@@ -40,6 +40,9 @@
  * Test code.
  */
 
+// added test
+int new_test(int, char **);
+
 /* These are only used during synchronization testing (OPT_SYNCHPROBS). */
 int elves(int, char **);
 int airballoon(int, char **);
